@@ -3,8 +3,8 @@ import { Theme } from "@mui/material/styles";
 import Drawer from "./Drawer";
 import Paper from "./Paper";
 import Card from "./Card";
-import Container from "./Container";
+import Button from "./Button";
 
 export default function ComponentsOverrides(theme: Theme) {
-  return merge(Drawer(theme), Paper(theme), Card(theme), Container(theme));
+  return merge(Drawer(theme), Paper(theme), Card(theme), Button(theme));
 }
