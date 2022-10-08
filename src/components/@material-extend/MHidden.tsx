@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
 import { Theme, useMediaQuery } from "@mui/material";
 
-// ----------------------------------------------------------------------
-
 type MHiddenProps = {
   children: ReactNode;
   width:
