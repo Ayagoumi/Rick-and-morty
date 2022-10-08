@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import { NAVBAR_HEIGHT } from "../constants/style";
-import ToTop from "../components/ToTop";
-import { MContainer } from "../components/@material-extend/MContainer";
 
 interface DefaultLayoutProps {
   children: React.ReactNode;
+  onOpenSidebar?: () => void;
+  backBtn?: boolean;
 }
 
-export default function DefaultLayout({ children }: DefaultLayoutProps) {
-  const [open, setOpen] = useState(false);
-
+export default function DefaultLayout({
+  children,
+  onOpenSidebar,
+  backBtn,
+}: DefaultLayoutProps) {
   return (
     <Box
       sx={{
@@ -22,16 +22,8 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         flexDirection: "column",
       }}
     >
-      <Navbar onOpenSidebar={() => setOpen(true)} />
-      <Box sx={{ display: "flex", flex: 1, mt: NAVBAR_HEIGHT }}>
-        <Sidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
-        <Box
-          sx={{ flexGrow: 1, overflow: "auto", minHeight: "100%", p: "15px" }}
-        >
-          <MContainer>{children}</MContainer>
-        </Box>
-      </Box>
-      <ToTop />
+      <Navbar onOpenSidebar={onOpenSidebar} backBtn={backBtn} />
+      <>{children}</>
     </Box>
   );
 }
