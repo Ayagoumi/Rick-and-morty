@@ -1,6 +1,4 @@
-import { Theme } from '@mui/material/styles';
-
-// ----------------------------------------------------------------------
+import { Theme } from "@mui/material/styles";
 
 export default function Card(theme: Theme) {
   return {
@@ -9,28 +7,31 @@ export default function Card(theme: Theme) {
         root: {
           boxShadow: theme.customShadows.z16,
           borderRadius: theme.shape.borderRadiusMd,
-          position: 'relative',
-          zIndex: 0 // Fix Safari overflow: hidden with border radius
-        }
-      }
+          position: "relative",
+          zIndex: 0, // Fix Safari overflow: hidden with border radius
+        },
+      },
     },
     MuiCardHeader: {
       defaultProps: {
-        titleTypographyProps: { variant: 'h6' },
-        subheaderTypographyProps: { variant: 'body2', marginTop: theme.spacing(0.5) }
+        titleTypographyProps: { variant: "h6" },
+        subheaderTypographyProps: {
+          variant: "body2",
+          marginTop: theme.spacing(0.5),
+        },
       },
       styleOverrides: {
         root: {
-          padding: theme.spacing(3, 3, 0)
-        }
-      }
+          padding: theme.spacing(3, 3, 0),
+        },
+      },
     },
     MuiCardContent: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(3)
-        }
-      }
-    }
+          padding: theme.spacing(3),
+        },
+      },
+    },
   };
 }

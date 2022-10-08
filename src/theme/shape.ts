@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 declare module "@mui/system" {
   interface Shape {
     borderRadiusSm: number | string;
