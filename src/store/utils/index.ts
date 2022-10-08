@@ -2,9 +2,13 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { characterType } from "../../@types/store";
 import { NUM_OF_CHARACTERS } from "../../constants/store";
-import { setCharactersCount, setPagesCount } from "../charachterSlice";
+import {
+  setAllPagesCount,
+  setCharactersCount,
+  setPagesCount,
+} from "../charachterSlice";
 
-const formatArray = (array: characterType[]) => {
+export const formatArray = (array: characterType[]) => {
   let formattedArray: characterType[][] = [];
   let tempArray: characterType[] = [];
 
@@ -27,9 +31,9 @@ export const getAllCharacters = createAsyncThunk(
         await axios.get(`https://rickandmortyapi.com/api/character`)
       ).data.info;
       let concatCharactersIds = "1";
-      // console.log(charactersCount, pagesCount);
       thunkAPI.dispatch(setPagesCount(pagesCount));
       thunkAPI.dispatch(setCharactersCount(charactersCount));
+      thunkAPI.dispatch(setAllPagesCount(pagesCount));
       for (let i = 2; i <= charactersCount; i++) {
         concatCharactersIds += `,${i}`;
       }

@@ -30,7 +30,12 @@ export interface characterType {
 export interface initialStateType {
   loading: Status;
   characters?: characterType[][];
+  filtredCharacters?: characterType[][];
   pagesCount: number;
+  allPageCount: number;
   charactersCount: number;
   currentPage: number;
+  gender: string;
+  status: string;
+  name: string;
 }
