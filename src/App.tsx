@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/">
           <Route index element={<Home />}></Route>
           <Route path="details/:id" element={<DetailsPage />}></Route>
+          <Route path="*" element={<Home />} />
         </Route>
       </Routes>
     </>
