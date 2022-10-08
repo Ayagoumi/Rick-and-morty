@@ -34,7 +34,6 @@ export default function RNMEpisodesTab({ episodes }: RNMEpisodesTabProps) {
           console.log(err);
         });
     }
-    console.log(url);
   }, [value]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
