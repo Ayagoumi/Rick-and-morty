@@ -45,15 +45,15 @@ export default function ToTop() {
         width: "45px",
         height: "45px",
         borderRadius: "8px",
-        backgroundColor: "#fff",
-        justifyContent: "center",
-        alignItems: "center",
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
         cursor: "pointer",
         boxShadow: theme.customShadows.z24,
         transition: "all 0.3s ease",
         zIndex: 9999,
         opacity: 0.5,
         pointerEvents: "none",
+        border: `1px solid ${theme.palette.primary.dark}`,
       }}
     >
       <UpIcon

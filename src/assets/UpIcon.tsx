@@ -2,7 +2,7 @@ import { Box, BoxProps, useTheme } from "@mui/material";
 
 export default function UpIcon({ ...other }: BoxProps) {
   const theme = useTheme();
-  const COMMON_BLACK = theme.palette.common.black;
+  const COMMON_WHITE = theme.palette.common.white;
 
   return (
     <Box {...other}>
@@ -12,7 +12,7 @@ export default function UpIcon({ ...other }: BoxProps) {
         height="24"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        stroke={COMMON_BLACK}
+        stroke={COMMON_WHITE}
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
